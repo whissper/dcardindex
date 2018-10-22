@@ -964,6 +964,8 @@ function selectDcardByID(dcardID) {
 								} else {
 									$('#' + key).prop('checked', true);
 								}
+							} else if (key == 'dwdynamicdetails') {
+								$('#' + key).attr("data-original-title",value);
 							}
 							//special fields end;
 							else {

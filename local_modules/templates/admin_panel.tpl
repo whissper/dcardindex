@@ -301,6 +301,16 @@
 							</div>
 						</div>
 						<div class="form-group form-group-sm">
+							<label class="col-md-3 control-label">Динамика СВ:</label>
+							<div class="col-md-9">
+								<div class="input-group input-group-sm" id="dwdynamicdetails" data-toggle="tooltip" data-placement="top" data-original-title="">
+									<span class="input-group-addon"><i class="far fa-circle"></i></span>
+									<input id="dwdynamic" class="form-control" type="text" placeholder="" disabled>
+									<span class="input-group-addon">кг</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-group-sm">
 							<label class="col-md-3 control-label">Рост:</label>
 							<div class="col-md-9">
 								<div class="input-group input-group-sm">

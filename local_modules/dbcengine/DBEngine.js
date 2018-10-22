@@ -349,12 +349,20 @@ class DBEngine {
 						'dialysis_cards.post_state_id AS "d60", '+
 						'dialysis_cards.post_gd_difficulties AS "d61", '+
 						'dialysis_cards.post_change_required AS "d62", '+
-						'dialysis_cards.post_additions AS "d63" '+
+						'dialysis_cards.post_additions AS "d63", '+
+						'(dialysis_cards.dry_weight - t.dry_weight) AS "dwdynamic", '+
+						'CONCAT(dialysis_cards.dry_weight,"_","(",DATE_FORMAT(dialysis_cards.date, "%d.%m.%Y"),")"," -- ",t.dry_weight,"_","(",DATE_FORMAT(t.date, "%d.%m.%Y"),")") AS "dwdynamicdetails" '+
 					'FROM '+
 						'dialysis_cards '+
 						'LEFT JOIN patients ON dialysis_cards.patient_id = patients.id '+
+						'JOIN dialysis_cards AS t '+
+							'ON t.patient_id = dialysis_cards.patient_id AND '+
+							'( t.date BETWEEN (last_day(dialysis_cards.date - interval 1 month) + interval 1 day) AND (last_day(dialysis_cards.date)) ) AND '+
+							't.deleted = 0 '+
 					'WHERE '+
-						'dialysis_cards.id = ?';
+						'dialysis_cards.id = ? '+
+					'ORDER BY t.date ASC '+
+					'LIMIT 1';
 				
 				entityName = 'dcard';
 				
@@ -426,7 +434,9 @@ class DBEngine {
 					d62 : 'd62',
 					d63 : 'd63',
 					dcardid : 'dcardid',
-					dpatientid : 'dpatientid'
+					dpatientid : 'dpatientid',
+					dwdynamic : 'dwdynamic',
+					dwdynamicdetails : 'dwdynamicdetails'
 				};
 				break;
 			case 'select_dcard_by_id_print':
