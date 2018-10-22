@@ -210,7 +210,7 @@
 							<label class="col-md-3 control-label">Дата:</label>
 							<div class="col-md-9">
 								<div class="input-group input-group-sm">
-									<span class="input-group-addon"><i class="far fa-circle"></i></span>
+									<span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
 									<input id="d6" class="form-control" type="text">
 								</div>
 							</div>
@@ -240,7 +240,7 @@
 							<label class="col-md-3 control-label">id карты:</label>
 							<div class="col-md-9">
 								<div class="input-group input-group-sm">
-									<span class="input-group-addon"><i class="far fa-circle"></i></span>
+									<span class="input-group-addon"><i class="fas fa-clipboard-check"></i></span>
 									<input id="dcardid" class="form-control" type="text" placeholder="" disabled>
 								</div>
 							</div>
@@ -259,7 +259,7 @@
 							<label class="col-md-2 control-label">id пациента:</label>
 							<div class="col-md-10">
 								<div class="input-group input-group-sm">
-									<span class="input-group-addon"><i class="far fa-circle"></i></span>
+									<span class="input-group-addon"><i class="far fa-id-badge"></i></span>
 									<input id="dpatientid" class="form-control" type="text" placeholder="" disabled>
 								</div>
 							</div>
@@ -268,7 +268,7 @@
 							<label class="col-md-2 control-label">Пациент:</label>
 							<div class="col-md-10">
 								<div class="input-group input-group-sm">
-									<span class="input-group-addon"><i class="far fa-circle"></i></span>
+									<span class="input-group-addon"><i class="fas fa-user-check"></i></span>
 									<input id="d1" class="form-control" type="text" placeholder="" disabled>
 								</div>
 							</div>
@@ -277,7 +277,7 @@
 							<label class="col-md-2 control-label">Зал:</label>
 							<div class="col-md-10">
 								<div class="input-group input-group-sm">
-									<span class="input-group-addon"><i class="far fa-circle"></i></span>
+									<span class="input-group-addon"><i class="fas fa-door-open"></i></span>
 									<input id="d5" class="form-control" type="text">
 								</div>
 							</div>
@@ -294,7 +294,7 @@
 							<label class="col-md-3 control-label">Сухой вес:</label>
 							<div class="col-md-9">
 								<div class="input-group input-group-sm">
-									<span class="input-group-addon"><i class="far fa-circle"></i></span>
+									<span class="input-group-addon"><i class="fas fa-weight"></i></span>
 									<input id="d2" class="form-control" type="text">
 									<span class="input-group-addon">кг</span>
 								</div>
@@ -304,7 +304,7 @@
 							<label class="col-md-3 control-label">Динамика СВ:</label>
 							<div class="col-md-9">
 								<div class="input-group input-group-sm" id="dwdynamicdetails" data-toggle="tooltip" data-placement="top" data-original-title="">
-									<span class="input-group-addon"><i class="far fa-circle"></i></span>
+									<span class="input-group-addon"><i class="fas fa-balance-scale"></i></span>
 									<input id="dwdynamic" class="form-control" type="text" placeholder="" disabled>
 									<span class="input-group-addon">кг</span>
 								</div>
@@ -314,7 +314,7 @@
 							<label class="col-md-3 control-label">Рост:</label>
 							<div class="col-md-9">
 								<div class="input-group input-group-sm">
-									<span class="input-group-addon"><i class="far fa-circle"></i></span>
+									<span class="input-group-addon"><i class="fas fa-ruler-vertical"></i></span>
 									<input id="d3" class="form-control" type="text" placeholder="" disabled>
 									<span class="input-group-addon">см</span>
 								</div>
@@ -324,7 +324,7 @@
 							<label class="col-md-3 control-label">Возраст:</label>
 							<div class="col-md-9">
 								<div class="input-group input-group-sm">
-									<span class="input-group-addon"><i class="far fa-circle"></i></span>
+									<span class="input-group-addon"><i class="far fa-clock"></i></span>
 									<input id="d4" class="form-control" type="text" placeholder="" disabled>
 								</div>
 							</div>
@@ -371,7 +371,7 @@
 										<label class="col-md-4 control-label">Время ГД:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-hourglass-start"></i></span>
 												<input id="d9" class="form-control" type="text">
 												<span class="input-group-addon">мин</span>
 											</div>
@@ -387,7 +387,7 @@
 										<label class="col-md-4 control-label">Подача:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d10" class="form-control" type="text">
 												<span class="input-group-addon">мл/ч</span>
 											</div>
@@ -407,7 +407,7 @@
 										<label class="col-md-4 control-label">Поток ди-та/ф.поток:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d12" class="form-control" type="text">
 											</div>
 										</div>
@@ -422,7 +422,7 @@
 										<label class="col-md-4 control-label">Доза гепарина :</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d13" class="form-control" type="text">
 												<span class="input-group-addon">ЕД</span>
 											</div>
@@ -432,7 +432,7 @@
 										<label class="col-md-4 control-label">Болюс:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d14" class="form-control" type="text">
 												<span class="input-group-addon">мл</span>
 											</div>
@@ -442,7 +442,7 @@
 										<label class="col-md-4 control-label">Вр. гепарин./оконч:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d15" class="form-control" type="text">
 											</div>
 										</div>
@@ -457,7 +457,7 @@
 										<label class="col-md-4 control-label">Бикарбонат:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d16" class="form-control" type="text">
 											</div>
 										</div>
@@ -466,7 +466,7 @@
 										<label class="col-md-4 control-label">Na+:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d17" class="form-control" type="text">
 											</div>
 										</div>
@@ -475,7 +475,7 @@
 										<label class="col-md-4 control-label">V-уф:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d18" class="form-control" type="text">
 											</div>
 										</div>
@@ -484,7 +484,7 @@
 										<label class="col-md-4 control-label">Ск.К.:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d19" class="form-control" type="text">
 											</div>
 										</div>
@@ -505,7 +505,7 @@
 										<label class="col-md-4 control-label">Вес:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-weight"></i></span>
 												<input id="d20" class="form-control" type="text">
 											</div>
 										</div>
@@ -514,7 +514,7 @@
 										<label class="col-md-4 control-label">АД:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-stethoscope"></i></span>
 												<input id="d21a" class="form-control" type="text">
 												<span class="input-group-addon">/</span>
 												<input id="d21b" class="form-control" type="text">
@@ -525,7 +525,7 @@
 										<label class="col-md-4 control-label">Пульс:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-heartbeat"></i></span>
 												<input id="d22" class="form-control" type="text">
 											</div>
 										</div>
@@ -761,7 +761,7 @@
 										<label class="col-md-4 control-label">Вес:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-weight"></i></span>
 												<input id="d45" class="form-control" type="text">
 											</div>
 										</div>
@@ -770,7 +770,7 @@
 										<label class="col-md-4 control-label">Удалено:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-balance-scale"></i></span>
 												<input id="d46" class="form-control" type="text" placeholder="" disabled>
 											</div>
 										</div>
@@ -779,7 +779,7 @@
 										<label class="col-md-4 control-label">АД:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-stethoscope"></i></span>
 												<input id="d47a" class="form-control" type="text">
 												<span class="input-group-addon">/</span>
 												<input id="d47b" class="form-control" type="text">
@@ -790,7 +790,7 @@
 										<label class="col-md-4 control-label">Пульс:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-heartbeat"></i></span>
 												<input id="d48" class="form-control" type="text">
 											</div>
 										</div>
@@ -805,7 +805,7 @@
 										<label class="col-md-4 control-label">KT/V:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d49" class="form-control" type="text">
 											</div>
 										</div>
@@ -814,7 +814,7 @@
 										<label class="col-md-4 control-label">V перф. крови:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d50" class="form-control" type="text">
 											</div>
 										</div>
@@ -823,7 +823,7 @@
 										<label class="col-md-4 control-label">V замещения:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d51" class="form-control" type="text">
 											</div>
 										</div>
@@ -838,7 +838,7 @@
 										<label class="col-md-4 control-label">Глюкоза до ГД:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d52" class="form-control" type="text">
 											</div>
 										</div>
@@ -847,7 +847,7 @@
 										<label class="col-md-4 control-label">Глюкоза после ГД:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d53" class="form-control" type="text">
 											</div>
 										</div>
@@ -856,7 +856,7 @@
 										<label class="col-md-4 control-label">t тела:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-thermometer-half"></i></span>
 												<input id="d54" class="form-control" type="text">
 											</div>
 										</div>
@@ -923,7 +923,7 @@
 										<label class="col-md-4 control-label">Ca++:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d55" class="form-control" type="text">
 											</div>
 										</div>
@@ -932,7 +932,7 @@
 										<label class="col-md-4 control-label">K+:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d56" class="form-control" type="text">
 											</div>
 										</div>
@@ -941,7 +941,7 @@
 										<label class="col-md-4 control-label">Na+:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">
-												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<span class="input-group-addon"><i class="fas fa-syringe"></i></span>
 												<input id="d57" class="form-control" type="text">
 											</div>
 										</div>
