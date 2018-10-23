@@ -488,7 +488,8 @@ dCardRouter.post('/print_dcard', async function(req, res, next){
 			d60: dcValues.fields.d60,
 			d61: (dcValues.fields.d61 === 0 ? 'нет' : 'есть'),
 			d62: (dcValues.fields.d62 === 0 ? 'нет' : 'требуется'),
-			d63: dcValues.fields.d63
+			d63: dcValues.fields.d63,
+			d64: dcValues.fields.d64
 		});
 		
 		try {

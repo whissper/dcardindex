@@ -511,6 +511,15 @@
 										</div>
 									</div>
 									<div class="form-group form-group-sm">
+										<label class="col-md-4 control-label">МДП:</label>
+										<div class="col-md-8">
+											<div class="input-group input-group-sm">
+												<span class="input-group-addon"><i class="far fa-circle"></i></span>
+												<input id="d64" class="form-control" type="text" placeholder="" disabled>
+											</div>
+										</div>
+									</div>
+									<div class="form-group form-group-sm">
 										<label class="col-md-4 control-label">АД:</label>
 										<div class="col-md-8">
 											<div class="input-group input-group-sm">

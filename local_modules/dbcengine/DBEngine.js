@@ -350,6 +350,7 @@ class DBEngine {
 						'dialysis_cards.post_gd_difficulties AS "d61", '+
 						'dialysis_cards.post_change_required AS "d62", '+
 						'dialysis_cards.post_additions AS "d63", '+
+						'(IF(dialysis_cards.pre_weight IS NULL OR dialysis_cards.dry_weight IS NULL, NULL, (dialysis_cards.pre_weight - dialysis_cards.dry_weight)*1000)) AS "d64", '+
 						'(dialysis_cards.dry_weight - t.dry_weight) AS "dwdynamic", '+
 						'CONCAT(dialysis_cards.dry_weight,"_","(",DATE_FORMAT(dialysis_cards.date, "%d.%m.%Y"),")"," -- ",t.dry_weight,"_","(",DATE_FORMAT(t.date, "%d.%m.%Y"),")") AS "dwdynamicdetails" '+
 					'FROM '+
@@ -433,6 +434,7 @@ class DBEngine {
 					d61 : 'd61',
 					d62 : 'd62',
 					d63 : 'd63',
+					d64 : 'd64',
 					dcardid : 'dcardid',
 					dpatientid : 'dpatientid',
 					dwdynamic : 'dwdynamic',
@@ -509,7 +511,8 @@ class DBEngine {
 						'post_state.name AS "d60", '+
 						'dialysis_cards.post_gd_difficulties AS "d61", '+
 						'dialysis_cards.post_change_required AS "d62", '+
-						'dialysis_cards.post_additions AS "d63" '+
+						'dialysis_cards.post_additions AS "d63", '+
+						'(IF(dialysis_cards.pre_weight IS NULL OR dialysis_cards.dry_weight IS NULL, NULL, (dialysis_cards.pre_weight - dialysis_cards.dry_weight)*1000)) AS "d64" '+
 					'FROM '+
 						'dialysis_cards '+
 						'LEFT JOIN patients ON dialysis_cards.patient_id = patients.id '+
@@ -597,6 +600,7 @@ class DBEngine {
 					d61 : 'd61',
 					d62 : 'd62',
 					d63 : 'd63',
+					d64 : 'd64',
 					dcardid : 'dcardid',
 					dpatientid : 'dpatientid'
 				};
