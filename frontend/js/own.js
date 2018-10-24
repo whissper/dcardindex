@@ -479,6 +479,18 @@ function fillTable(tableData, dataVal) {
             'class="btn btn-danger btn-sm sav2-opt-btn sav2-del-' + 'dcard' + '" id="' + arrVal[0] + '">' +
                 '<i class="far fa-trash-alt" style="font-size: 18px;"></i>' +
             '</button>'+
+			'<button title="Печать первой части" type="button" ' +
+            'class="btn btn-primary btn-sm sav2-opt-btn sav2-print-i-' + 'dcard' + '" id="' + arrVal[0] + '">' +
+                '<i class="fas fa-file-word" style="font-size: 18px;"></i> I' +
+            '</button>'+
+			'<button title="Печать второй части" type="button" ' +
+            'class="btn btn-primary btn-sm sav2-opt-btn sav2-print-ii-' + 'dcard' + '" id="' + arrVal[0] + '">' +
+                '<i class="fas fa-file-word" style="font-size: 18px;"></i> II' +
+            '</button>'+
+			'<button title="Печать всей карты" type="button" ' +
+            'class="btn btn-primary btn-sm sav2-opt-btn sav2-print-' + 'dcard' + '" id="' + arrVal[0] + '">' +
+                '<i class="fas fa-file-word" style="font-size: 18px;"></i>' +
+            '</button>'+
 			'<button title="Работа с картой" type="button" ' +
             'class="btn btn-success btn-sm sav2-opt-btn sav2-process-' + 'dcard' + '" id="' + arrVal[0] + '">' +
                 '<i class="far fa-clipboard" style="font-size: 18px;"></i>' +
@@ -1382,6 +1394,27 @@ $(document).ready(function(){
 		
 		$('#tabPre').trigger('click');
         $('#showTab3').trigger('click');
+    });
+	
+	//Admin workarea Tab-2 (buttons .sav2-print-i-dcard -- print doc-file)
+    $(document).on('click', '.sav2-print-i-dcard', function(){      			
+		$('#printdcardidinput').val($(this).attr('id'));
+		$('#printtypeinput').val('1');
+		$('#printform').submit();	
+    });
+	
+	//Admin workarea Tab-2 (buttons .sav2-print-ii-dcard -- print doc-file)
+    $(document).on('click', '.sav2-print-ii-dcard', function(){      			
+		$('#printdcardidinput').val($(this).attr('id'));
+		$('#printtypeinput').val('2');
+		$('#printform').submit();	
+    });
+	
+	//Admin workarea Tab-2 (buttons .sav2-print-dcard -- print doc-file)
+    $(document).on('click', '.sav2-print-dcard', function(){      			
+		$('#printdcardidinput').val($(this).attr('id'));
+		$('#printtypeinput').val('3');
+		$('#printform').submit();	
     });
 	
 	/** -- TAB 3 -- **/
