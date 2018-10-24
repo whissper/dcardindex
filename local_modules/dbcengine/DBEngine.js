@@ -155,11 +155,11 @@ class DBEngine {
 					'ORDER BY dialysis_cards.id DESC '+
 					'LIMIT ' + postData.startPosition + ', ' + postData.perPage;
 					
-				params.push(postData.id)
-				params.push(postData.date)
-				params.push(postData.patientid)
-				params.push(postData.patientfio)
-				params.push(postData.patientambnum)
+				params.push(postData.id);
+				params.push(postData.date);
+				params.push(postData.patientid);
+				params.push(postData.patientfio);
+				params.push(postData.patientambnum);
 				
 				dataColumns.push(
 					'id',
@@ -167,6 +167,126 @@ class DBEngine {
 					'patientid',
 					'fio',
 					'ambulance_num'
+				);
+				break;
+			case 'validate_dcards':
+				queryStringCount =
+					'SELECT '+
+						'COUNT(dialysis_cards.id) AS "countrows" '+ 
+					'FROM dialysis_cards '+
+					'WHERE '+
+						'dialysis_cards.dry_weight IS NULL OR '+
+						'dialysis_cards.room IS NULL OR '+
+						'dialysis_cards.date IS NULL OR '+
+						'dialysis_cards.gd_period_minutes IS NULL OR '+
+						'dialysis_cards.inject_speed IS NULL OR '+
+						'dialysis_cards.stream_dita IS NULL OR '+
+						'dialysis_cards.heparin_dose IS NULL OR '+
+						'dialysis_cards.bolus IS NULL OR '+
+						'dialysis_cards.vr_heparin_complete IS NULL OR '+
+						'dialysis_cards.bicarbonate IS NULL OR '+
+						'dialysis_cards.na IS NULL OR '+
+						'dialysis_cards.v_uf IS NULL OR '+
+						'dialysis_cards.sk_k IS NULL OR '+
+						'dialysis_cards.pre_weight IS NULL OR '+
+						'dialysis_cards.pre_ap_up IS NULL OR '+
+						'dialysis_cards.pre_ap_low IS NULL OR '+
+						'dialysis_cards.pre_pulse IS NULL OR '+
+						'dialysis_cards.post_weight IS NULL OR '+
+						'dialysis_cards.post_ap_up IS NULL OR '+
+						'dialysis_cards.post_ap_low IS NULL OR '+
+						'dialysis_cards.post_pulse IS NULL OR '+
+						'dialysis_cards.ktv IS NULL OR '+
+						'dialysis_cards.v_perf_blood IS NULL';
+				
+				queryString =
+					'SELECT '+
+						'dialysis_cards.id, '+ 
+						'dialysis_cards.date, '+ 
+						'patients.id AS "patientid", '+ 
+						'patients.fio, '+
+						'patients.ambulance_num, '+ // <-------- table columns						
+						'dialysis_cards.dry_weight, '+
+						'dialysis_cards.room, '+
+						'dialysis_cards.date, '+
+						'dialysis_cards.gd_period_minutes, '+
+						'dialysis_cards.inject_speed, '+
+						'dialysis_cards.stream_dita, '+
+						'dialysis_cards.heparin_dose, '+
+						'dialysis_cards.bolus, '+
+						'dialysis_cards.vr_heparin_complete, '+
+						'dialysis_cards.bicarbonate, '+
+						'dialysis_cards.na, '+
+						'dialysis_cards.v_uf, '+
+						'dialysis_cards.sk_k, '+
+						'dialysis_cards.pre_weight, '+
+						'dialysis_cards.pre_ap_up, '+
+						'dialysis_cards.pre_ap_low, '+
+						'dialysis_cards.pre_pulse, '+
+						'dialysis_cards.post_weight, '+
+						'dialysis_cards.post_ap_up, '+
+						'dialysis_cards.post_ap_low, '+
+						'dialysis_cards.post_pulse, '+
+						'dialysis_cards.ktv, '+
+						'dialysis_cards.v_perf_blood '+
+					'FROM dialysis_cards '+
+					'LEFT JOIN patients ON dialysis_cards.patient_id = patients.id '+
+					'WHERE '+
+						'dialysis_cards.dry_weight IS NULL OR '+
+						'dialysis_cards.room IS NULL OR '+
+						'dialysis_cards.date IS NULL OR '+
+						'dialysis_cards.gd_period_minutes IS NULL OR '+
+						'dialysis_cards.inject_speed IS NULL OR '+
+						'dialysis_cards.stream_dita IS NULL OR '+
+						'dialysis_cards.heparin_dose IS NULL OR '+
+						'dialysis_cards.bolus IS NULL OR '+
+						'dialysis_cards.vr_heparin_complete IS NULL OR '+
+						'dialysis_cards.bicarbonate IS NULL OR '+
+						'dialysis_cards.na IS NULL OR '+
+						'dialysis_cards.v_uf IS NULL OR '+
+						'dialysis_cards.sk_k IS NULL OR '+
+						'dialysis_cards.pre_weight IS NULL OR '+
+						'dialysis_cards.pre_ap_up IS NULL OR '+
+						'dialysis_cards.pre_ap_low IS NULL OR '+
+						'dialysis_cards.pre_pulse IS NULL OR '+
+						'dialysis_cards.post_weight IS NULL OR '+
+						'dialysis_cards.post_ap_up IS NULL OR '+
+						'dialysis_cards.post_ap_low IS NULL OR '+
+						'dialysis_cards.post_pulse IS NULL OR '+
+						'dialysis_cards.ktv IS NULL OR '+
+						'dialysis_cards.v_perf_blood IS NULL '+
+					'ORDER BY dialysis_cards.id DESC '+
+					'LIMIT ' + postData.startPosition + ', ' + postData.perPage;
+					
+				dataColumns.push(
+					'id',
+					'date',
+					'patientid',
+					'fio',
+					'ambulance_num',
+					'dry_weight',
+					'room',
+					'date',
+					'gd_period_minutes',
+					'inject_speed',
+					'stream_dita',
+					'heparin_dose',
+					'bolus',
+					'vr_heparin_complete',
+					'bicarbonate',
+					'na',
+					'v_uf',
+					'sk_k',
+					'pre_weight',
+					'pre_ap_up',
+					'pre_ap_low',
+					'pre_pulse',
+					'post_weight',
+					'post_ap_up',
+					'post_ap_low',
+					'post_pulse',
+					'ktv',
+					'v_perf_blood'
 				);
 				break;
         }

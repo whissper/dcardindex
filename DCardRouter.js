@@ -302,6 +302,21 @@ dCardRouter.post('/select_dcards', async function(req, res, next){
         res.send('ERROR_ACCESS_DENIED');
     }
 });
+//validate dcards
+dCardRouter.post('/validate_dcards', async function(req, res, next){
+    //1 -- for main-inspector usage
+    if (Utils.checkPermission(req.session, 1)) {
+        var postData = {};
+        postData.page = parseInt(req.body.page);
+        postData.perPage = 25;
+        postData.startPosition = postData.perPage * postData.page;
+		
+        var dbEngine = new DBEng(req.session, connectionPool);
+        res.send(await dbEngine.selectData('validate_dcards', postData));
+    } else {
+        res.send('ERROR_ACCESS_DENIED');
+    }
+});
 //select dcard by ID
 dCardRouter.post('/select_dcard_by_id', async function(req, res, next){
     //1 -- for main-inspector usage | 3 -- for inspector usage

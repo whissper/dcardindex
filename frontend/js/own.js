@@ -9,6 +9,7 @@
 var currentPageUser = 0;
 var currentPagePatient = 0;
 var currentPageDcard = 0;
+var currentPageValidateDcard = 0;
 
 //reference to timer(timeout) ID value of the timer that is set
 var delayTimer;
@@ -17,6 +18,31 @@ var searchLatency = 1000;
 //url to the back-end (main enrance)
 var restServiceUrl = '/dcard/';
 
+var fieldsToValidate = [
+	'Сухой вес',
+	'Зал',
+	'Дата',
+	'Время ГД',
+	'Подача',
+	'Поток ди-та/ф.поток',
+	'Доза гепарина',
+	'Болюс',
+	'Вр. гепарин./оконч',
+	'Бикарбонат',
+	'Na+',
+	'V-уф',
+	'Ск.К.',
+	'Вес (до ГД)',
+	'АД-верх (до ГД)',
+	'АД-нижн (до ГД)',
+	'Пульс (до ГД)',
+	'Вес (после ГД)',
+	'АД-верх (после ГД)',
+	'АД-нижн (после ГД)',
+	'Пульс (после ГД)',
+	'KT/V',
+	'V перф. крови'
+];
 
 /* @since 23.04.2018
 //g-recaptcha on load
@@ -363,6 +389,10 @@ function fillTable(tableData, dataVal) {
 			currentPageDcard = numberOfPages - 1;
 			selectDcards(numberOfPages - 1);
 		},
+		'validatedcard': function(){
+			currentPageValidateDcard = numberOfPages - 1;
+			validateDcards(numberOfPages - 1);
+		},
         'default': function(){}
     };
     //header
@@ -384,6 +414,13 @@ function fillTable(tableData, dataVal) {
             }
 		},
 		'dcard': function(indexVal, valueVal) {
+			if (indexVal === 2) {
+                //do nothing
+            } else {
+                tableString += '<td>' + valueVal + '</td>';
+            }
+		},
+		'validatedcard': function(indexVal, valueVal) {
 			if (indexVal === 2) {
                 //do nothing
             } else {
@@ -417,6 +454,29 @@ function fillTable(tableData, dataVal) {
                 tableString += '<td><div data-placement="left" data-toggle="tooltip" title="id: ' + valueVal + '">';
             } else if (indexVal === 3) {
 				tableString += valueVal + '</div></td>';
+			} else {
+               tableString += '<td>' + valueVal + '</td>'; 
+            }
+		},
+		'validatedcard': function(indexVal, valueVal) {
+			if (indexVal === 2) {
+                tableString += '<td><div data-placement="left" data-toggle="tooltip" title="id: ' + valueVal + '">';
+            } else if (indexVal === 3) {
+				tableString += valueVal + '</div></td>';
+			} else if (indexVal >= 5 && indexVal <= 27) {
+				if (indexVal == 5) {
+					tableString += '<td>';
+				}
+				//-----------------------------
+				if (valueVal === '') {
+					tableString += '<div class="sav2-object-li">';
+					tableString += '<span class="label label-danger"><i class="fas fa-minus-circle"></i></span> ' + fieldsToValidate[indexVal-5];//"-5" coz of fieldsToValidate[0..23] but indexVal between 5..27
+					tableString += '</div>';
+				}
+				//-----------------------------
+				if (indexVal == 27) {
+					tableString += '</td>';
+				}
 			} else {
                tableString += '<td>' + valueVal + '</td>'; 
             }
@@ -496,6 +556,14 @@ function fillTable(tableData, dataVal) {
                 '<i class="far fa-clipboard" style="font-size: 18px;"></i>' +
             '</button>';
         },
+		'validatedcard': function(arrVal) {
+            tableString += 
+            '<td>' +
+			'<button title="Работа с картой" type="button" ' +
+            'class="btn btn-success btn-sm sav2-opt-btn sav2-process-' + 'dcard' + '" id="' + arrVal[0] + '">' +
+                '<i class="far fa-clipboard" style="font-size: 18px;"></i>' +
+            '</button>';
+        },
         'default': function(arrVal) {
             tableString += 
             '<td>' +
@@ -523,6 +591,10 @@ function fillTable(tableData, dataVal) {
 		'dcard': function(curPageVal){
 			currentPageDcard = curPageVal;
 			selectDcards(currentPageDcard);
+		},
+		'validatedcard': function(curPageVal){
+			currentPageValidateDcard = curPageVal;
+			validateDcards(currentPageValidateDcard);
 		},
         'default': function(curPageVal){}
     };
@@ -625,7 +697,10 @@ function doSelect(queryName, searchParams, tableData) {
             if ( !processException({message: message, methodName: queryName}) ) {//if exception hasn't occurred  
                 var selectedData = $.parseJSON(message);
                 fillTable(tableData, selectedData);
-                if (queryName === 'select_users' || queryName === 'select_patients' || queryName === 'select_dcards') {
+                if (queryName === 'select_users' || 
+					queryName === 'select_patients' || 
+					queryName === 'select_dcards' ||
+					queryName === 'validate_dcards') {
                     $('[data-toggle="tooltip"]').tooltip();
                 }
             }
@@ -1118,6 +1193,20 @@ function insertUser() {
     );
 }
 
+//tab-5 validate dcards
+function validateDcards(pageId) {
+	doSelect('validate_dcards',
+		{
+			page: pageId
+		},
+		{
+			prefix: 'validatedcard',
+			content: '.sav2-validate-dcard-table',
+			header: ['id', 'Дата процедуры', 'id пациента', 'Пациент', '№ амб. карты', 'Поля', 'Действие']
+		}
+	);
+}
+
 //initialization: kinda -- "public static void main(String[] args){ ... }"
 /**
  *  public static void (String[] args){ ... }
@@ -1127,6 +1216,7 @@ $(document).ready(function(){
     currentPageUser = 0;
 	currentPagePatient = 0;
 	currentPageDcard = 0;
+	currentPageValidateDcard = 0;
 	
     keepUserWorkspace();
 	
@@ -1384,6 +1474,7 @@ $(document).ready(function(){
     });
 	
 	//Admin workarea Tab-2 (process dcards)
+	//Admin workarea Tab-5 (process dcards)
     $(document).on('click', '.sav2-process-dcard', function () {
 		//clear dcard forms
 		for (var i=1; i<=18; i++) {
@@ -1513,6 +1604,13 @@ $(document).ready(function(){
 	//Admin workarea Tab-4 insert new user
     $(document).on('click', '#addnewuser', function () {
         loadInsertForm(0, 0, 'insert_user_modal');
+    });
+	
+	/** -- TAB 5 -- **/
+    //Admin workarea Tab-5
+    //show up
+    $(document).on('click', '#showTab5', function(){
+        validateDcards(currentPageValidateDcard);
     });
 	
 });

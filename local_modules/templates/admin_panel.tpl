@@ -6,6 +6,7 @@
 			  <button type="button" class="btn btn-default" id="showTab2">Картотека</button>
 			  <button type="button" class="btn btn-default" id="showTab3">Выбранная карта</button>
 			  <button type="button" class="btn btn-default" id="showTab4" [@hide]>Пользователи</button>
+			  <button type="button" class="btn btn-default" id="showTab5" [@hide]>Валидация карт</button>
 			  <button type="button" class="btn btn-primary" id="logout">Выйти</button>
 		</div>
 	</div>
@@ -1041,6 +1042,28 @@
 		<hr />
 		<p>Список записей:</p>
 		<div class="sav2-edit-user-table">
+		<!-- DYNAMIC start: -->
+		
+		<!-- DYNAMIC end; -->
+		</div>
+	</div>
+</div>
+
+<!-- TAB 5 -->
+<div class="row sav2-tabs sav2-tab5">
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fas fa-user-md"></i> Сотрудник: </span>
+					<input id="userinfo5" type="text" class="form-control" value="[@userfio]" userid="[@userid]" disabled="">
+				</div>
+				<br />
+			</div>		
+		</div>
+		<hr />
+		<p>Список записей:</p>
+		<div class="sav2-validate-dcard-table">
 		<!-- DYNAMIC start: -->
 		
 		<!-- DYNAMIC end; -->

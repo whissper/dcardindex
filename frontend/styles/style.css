@@ -284,6 +284,10 @@ body {
 	background-color: #f1f1f1;
 }
 
+.form-group-sm select.form-control {
+	line-height: 1.5;
+}
+
 .clear {
 	clear: both;
 }
