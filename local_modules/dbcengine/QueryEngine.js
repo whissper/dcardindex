@@ -18,8 +18,8 @@ class QueryEngine {
         return mysql.createPool({
             timezone        : 'Z',
             host            : 'localhost',
-            user            : 'yusav',
-            password        : 'Whissper@9',
+            user            : 'root',
+            password        : '123',
             database        : 'dcardindex',
             connectionLimit : 10
         });
