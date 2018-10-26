@@ -2,8 +2,8 @@
  -- D-CARD-INDEX --
  --- front-end ---
  @author: SAV2
- @version 0.0.1
- @since: 07.10.2018
+ @version 0.2.0
+ @since: 26.10.2018
  **/
 
 var currentPageUser = 0;

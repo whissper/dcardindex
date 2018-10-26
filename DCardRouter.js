@@ -1,3 +1,11 @@
+/**
+ -- D-CARD-INDEX --
+ --- back-end ---
+ @author: SAV2
+ @version 0.2.0
+ @since: 26.10.2018
+ **/
+
 var path          = require('path');
 var express       = require('express');
 var session       = require('express-session');
