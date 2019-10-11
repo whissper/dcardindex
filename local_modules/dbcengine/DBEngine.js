@@ -174,8 +174,8 @@ class DBEngine {
 					'SELECT '+
 						'COUNT(dialysis_cards.id) AS "countrows" '+ 
 					'FROM dialysis_cards '+
-					'WHERE '+
-						'dialysis_cards.dry_weight IS NULL OR '+
+					'WHERE dialysis_cards.deleted = 0 AND '+
+						'( dialysis_cards.dry_weight IS NULL OR '+
 						'dialysis_cards.room IS NULL OR '+
 						'dialysis_cards.date IS NULL OR '+
 						'dialysis_cards.gd_period_minutes IS NULL OR '+
@@ -197,7 +197,7 @@ class DBEngine {
 						'dialysis_cards.post_ap_low IS NULL OR '+
 						'dialysis_cards.post_pulse IS NULL OR '+
 						'dialysis_cards.ktv IS NULL OR '+
-						'dialysis_cards.v_perf_blood IS NULL';
+						'dialysis_cards.v_perf_blood IS NULL )';
 				
 				queryString =
 					'SELECT '+
@@ -231,8 +231,8 @@ class DBEngine {
 						'dialysis_cards.v_perf_blood '+
 					'FROM dialysis_cards '+
 					'LEFT JOIN patients ON dialysis_cards.patient_id = patients.id '+
-					'WHERE '+
-						'dialysis_cards.dry_weight IS NULL OR '+
+					'WHERE dialysis_cards.deleted = 0 AND '+
+						'( dialysis_cards.dry_weight IS NULL OR '+
 						'dialysis_cards.room IS NULL OR '+
 						'dialysis_cards.date IS NULL OR '+
 						'dialysis_cards.gd_period_minutes IS NULL OR '+
@@ -254,7 +254,7 @@ class DBEngine {
 						'dialysis_cards.post_ap_low IS NULL OR '+
 						'dialysis_cards.post_pulse IS NULL OR '+
 						'dialysis_cards.ktv IS NULL OR '+
-						'dialysis_cards.v_perf_blood IS NULL '+
+						'dialysis_cards.v_perf_blood IS NULL ) '+
 					'ORDER BY dialysis_cards.id DESC '+
 					'LIMIT ' + postData.startPosition + ', ' + postData.perPage;
 					
