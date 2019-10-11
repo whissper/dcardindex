@@ -545,7 +545,7 @@ dCardRouter.post('/print_dcard', async function(req, res, next){
 			'Content-disposition': 'attachment;filename="' + 'output' + '.docx"',
 			'Content-Length': buf.length
 		});
-		res.end(new Buffer(buf, 'binary'));
+		res.end(Buffer.from(buf, 'binary'));
     } else {
         res.send('ERROR_ACCESS_DENIED');
     }
