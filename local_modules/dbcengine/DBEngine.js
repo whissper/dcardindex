@@ -798,7 +798,7 @@ class DBEngine {
                     'WHERE users.id = ?';
             
                 params.push(postData['id']);
-                resultString = 'Пользователь с id: <b>' + postData['id'] + '</b> заблокирован.';
+                resultString = 'Пользователь с id: ' + postData['id'] + ' заблокирован.';
                 break;
             case 'unlock_user':
                 queryString = 
@@ -807,7 +807,7 @@ class DBEngine {
                     'WHERE users.id = ?';
             
                 params.push(postData['id']);
-                resultString = 'Пользователь с id: <b>' + postData['id'] + '</b> разблокирован.';
+                resultString = 'Пользователь с id: ' + postData['id'] + ' разблокирован.';
                 break;
             case 'update_user':
                 //if pass field is empty then don't change the password
@@ -847,7 +847,7 @@ class DBEngine {
 					}
                 }
                 
-                resultString = 'Данные пользователя с id: <b>' + postData['id'] + '</b> успешно изменены.';
+                resultString = 'Данные пользователя с id: ' + postData['id'] + ' успешно изменены.';
                 break;
 			case 'insert_user':
 				queryString = 
@@ -859,7 +859,7 @@ class DBEngine {
 				params.push(CryptEng.hashPass(postData['pass']));
 				params.push(postData['role']);
 				
-				resultString = 'Новый пользователь <b>' + postData['fio'] + '</b> успешно заведен в базу.';
+				resultString = 'Новый пользователь ' + postData['fio'] + ' успешно заведен в базу.';
 				break;
 			case 'update_patient':
 				queryString = 
@@ -873,7 +873,7 @@ class DBEngine {
 				params.push(postData['height']);
 				params.push(postData['id']);
 				
-				resultString = 'Данные пациента с id: <b>' + postData['id'] + '</b> успешно изменены.';
+				resultString = 'Данные пациента с id: ' + postData['id'] + ' успешно изменены.';
 				break;
 			case 'insert_patient':
 				queryString = 
@@ -885,7 +885,7 @@ class DBEngine {
 				params.push(postData['birthdate']);
 				params.push(postData['height']);
 				
-				resultString = 'Новый пациент <b>' + postData['fio'] + '</b> успешно заведен в базу.';
+				resultString = 'Новый пациент ' + postData['fio'] + ' успешно заведен в базу.';
 				break;
 			case 'insert_dcard':
 				queryString =
@@ -897,7 +897,7 @@ class DBEngine {
 				params.push(postData['dprocedureid']);
 				params.push(postData['changelog']);
 				
-				resultString = 'Диализная карта для пациента (id) <b>' + postData['patientid'] + '</b> с датой от <b>' + postData['date'] + '</b> успешно заведена в базу.';
+				resultString = 'Диализная карта для пациента (id) ' + postData['patientid'] + ' с датой от ' + postData['date'] + ' успешно заведена в базу.';
 				break;
 			case 'update_dcard':
 				queryString = 
@@ -1033,7 +1033,7 @@ class DBEngine {
 				params.push(postData['changelog']);
 				params.push(postData['id']);
 				
-				resultString = 'Данные по карте под номером id: <b>' + postData['id'] + '</b> записаны.';
+				resultString = 'Данные по карте под номером id: ' + postData['id'] + ' записаны.';
 				break;
 			case 'delete_dcard':
 				queryString = 
@@ -1043,7 +1043,7 @@ class DBEngine {
 				
 				params.push(postData['changelog']);
 				params.push(postData['id']);
-				resultString = 'Карта под номером id: <b>' + postData['id'] + '</b> успешно удалена.';
+				resultString = 'Карта под номером id: ' + postData['id'] + ' успешно удалена.';
 				break;
         }
         

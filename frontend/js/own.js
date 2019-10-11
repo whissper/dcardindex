@@ -2,8 +2,8 @@
  -- D-CARD-INDEX --
  --- front-end ---
  @author: SAV2
- @version 0.2.0
- @since: 26.10.2018
+ @version 0.3.0
+ @since: 11.10.2019
  **/
 
 var currentPageUser = 0;
@@ -295,7 +295,11 @@ function loadUserWorkspace(message) {
                 userrole: userData.userrole
             },
             success: function(message) {
-                choosePanel(message);
+                //choosePanel(message);
+				//since 03.10.2019
+				var jsonMessage = $.parseJSON(message);
+                choosePanel(jsonMessage.panelID);
+				//since 03.10.2019
             },
             error: function(){
                 alert('error occured during ajax-request to the server : ' +
@@ -315,7 +319,11 @@ function keepUserWorkspace() {
             id: '0'
         },
         success: function(message) {
-            choosePanel(message);
+            //choosePanel(message);
+			//since 03.10.2019
+			var jsonMessage = $.parseJSON(message);
+			choosePanel(jsonMessage.panelID);
+			//since 03.10.2019
         },
         error: function(){
             alert('error occured during ajax-request to the server : ' +
