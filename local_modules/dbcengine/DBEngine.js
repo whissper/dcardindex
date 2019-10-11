@@ -48,7 +48,7 @@ class DBEngine {
                     }
                 }, 
                 (error) => {
-                    rows.error = 'ERROR_PDO|' + error.sqlMessage;
+                    rows.error = 'ERROR_PDO|' + 'SQL Exception: ' + error.message;
                 }
             );
 
@@ -301,7 +301,7 @@ class DBEngine {
                         resultString.rowitems  = [];
                     },
                     (error) => {
-                        throw new SQLException('SQL Exception', error.sqlMessage);
+                        throw new SQLException('SQL Exception', error.message);
                     }
                 );
             
@@ -311,7 +311,7 @@ class DBEngine {
                         resultSet = result;
                     },
                     (error) => {
-                        throw new SQLException('SQL Exception', error.sqlMessage);
+                        throw new SQLException('SQL Exception', error.message);
                     }
                 );
             
@@ -334,7 +334,7 @@ class DBEngine {
                 resultString.rowitems.push(itemToPlace);
             }
         } catch (e) {
-            resultString = 'ERROR_PDO|' + e.error;
+            resultString = 'ERROR_PDO|' + e.message +': '+ e.error;
         }
 
         return resultString;    
@@ -734,7 +734,7 @@ class DBEngine {
                         resultSet = result;
                     },
                     (error) => {
-                        throw new SQLException('SQL Exception', error.sqlMessage);
+                        throw new SQLException('SQL Exception', error.message);
                     }
                 );
 
@@ -771,7 +771,7 @@ class DBEngine {
                     break;
             }
         } catch (e) {
-            resultString = 'ERROR_PDO|' + e.error;
+            resultString = 'ERROR_PDO|' + e.message +': '+ e.error;
         }
 
         return resultString;
@@ -1058,7 +1058,7 @@ class DBEngine {
 
                             },
                             (error) => {
-                                throw new SQLException('SQL Exception', error.sqlMessage);
+                                throw new SQLException('SQL Exception', error.message);
                             }
                         );
                 } else {
@@ -1072,12 +1072,12 @@ class DBEngine {
 
                         },
                         (error) => {
-                            throw new SQLException('SQL Exception', error.sqlMessage);
+                            throw new SQLException('SQL Exception', error.message);
                         }
                     );
             }
         } catch (e) {
-            resultString = 'ERROR_PDO|' + e.error;
+            resultString = 'ERROR_PDO|' + e.message +': '+ e.error;
         }
 
         return resultString;
@@ -1114,7 +1114,7 @@ class DBEngine {
                         }
                     },
                     (error) => {
-                        throw new SQLException('SQL Exception', error.sqlMessage);
+                        throw new SQLException('SQL Exception', error.message);
                     }
                 );
         } catch(e) {
