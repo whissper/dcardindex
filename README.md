@@ -1,8 +1,6 @@
 # dcardindex
 dcard index (node.js + mysql project)
 
-`./frontend/fontawesome-free-5_0_13`  -- contains Font Awesome Version 5.0.13 (src structure)
-
 ## npm commands for node_modules
 
 ```
