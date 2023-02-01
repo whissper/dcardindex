@@ -16,7 +16,7 @@
     "docxtemplater": "^3.9.1",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
-    "jszip": "^2.6.1",
+    "jszip": "^3.8.0",
     "mysql": "^2.16.0"
   }
 }
